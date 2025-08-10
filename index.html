@@ -2,20 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuroTouch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>NeuroTouch Pro (Demo)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>NeuroTouch</h1>
+    <h1>NeuroTouch Pro — Demo</h1>
   </header>
 
   <main>
-    <button class="touch-btn" data-action="accion1">Botón 1</button>
-    <button class="touch-btn" data-action="accion2">Botón 2</button>
-    <button class="touch-btn" data-action="accion3">Botón 3</button>
+    <section class="grid">
+      <button class="touch-btn" data-action="beep">Beep / Flash</button>
+      <button class="touch-btn" data-action="vibrate">Vibrar + Beep Grave</button>
+      <button class="touch-btn" data-action="contar">Contar / Registrar</button>
+    </section>
+
+    <section class="panel">
+      <div class="stat">
+        <span class="label">Toques:</span>
+        <span id="count">0</span>
+      </div>
+
+      <div class="controls">
+        <button id="exportCsv" class="secondary">Exportar CSV</button>
+        <button id="resetLog" class="secondary">Reset</button>
+        <button id="fullscreen" class="secondary">Pantalla completa</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Metrónomo</h2>
+      <div class="controls">
+        <label for="bpm">BPM:</label>
+        <input id="bpm" type="number" min="20" max="300" value="60" inputmode="numeric" />
+        <button id="startMetronome">Iniciar</button>
+        <button id="stopMetronome" class="danger">Detener</button>
+      </div>
+    </section>
   </main>
+
+  <div id="flash"></div>
 
   <footer>
     <p>© 2025 NeuroTouch</p>
